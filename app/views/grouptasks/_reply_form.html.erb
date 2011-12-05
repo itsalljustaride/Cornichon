@@ -1,0 +1,13 @@
+<div id="reply_to_comment_<%= parent.id %>_form" class="comment_reply_form">
+	Reply to this comment:
+	<% form_remote_tag :url => {:controller => 'grouptasks', :action => 'create_comment_reply'} do %>
+		<%= text_area_tag 'comment[body]', nil, :cols => 40, :rows => 10, :id => 'new_comment' %>
+		<%= submit_tag 'Submit' %>
+		<%= button_to_function 'Cancel', "document.getElementById('reply_to_comment_#{parent.id}_form').remove()" %>
+		<%= button_to_function 'Insert Current Timecode', "InsertTime(#{rec.identifier},new_comment)", :class => "timecode_button" %>
+		<%= hidden_field_tag 'comment[student_id]', current_user.id %>
+		<%= hidden_field_tag 'comment[sessionrecording_id]', rec.id %>
+		<%= hidden_field_tag 'comment[kind]', comment_kind(task) %><br/>
+		<%= hidden_field_tag 'comment[parent_id]', parent.id %><br/>
+	<% end %>
+</div>

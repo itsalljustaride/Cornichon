@@ -1,0 +1,14 @@
+<div id="content">
+	<h1><%= @task.taskname %></h1>
+	<div id="edit_perms">
+	  <%= edit_perms_link %>
+	</div>
+	<% if flash[:notice] -%>
+		<div id="task_notice"><p><%= flash[:notice] %></p></div>
+	<% end -%>
+	<div id="task_content">
+  	<%= render :partial => 'recordings' %>
+  	<%= render :partial => 'comments' %>
+  </div>
+</div>
+<%= load_comment_pane_if_needed %>

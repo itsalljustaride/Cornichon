@@ -1,0 +1,1 @@
+page.insert_html :before, "comment_#{@parent.id}_children", :partial => 'reply_form', :locals => {:parent => @parent, :rec => @recording, :task => @task}

@@ -1,0 +1,13 @@
+<div class="comment_form">
+	<% form_remote_tag :url => {:controller => 'grouptasks', :action => 'update_comment', :id => @comment} do %>
+		<%= text_area_tag 'comment[body]', @comment.body, :cols => 40, :rows => 10, :id => "form_#{@comment.id}"  %>
+		<%= hidden_field_tag 'comment[student_id]', current_user.id %>
+		<%= hidden_field_tag 'comment[sessionrecording_id]', @comment.sessionrecording_id %>
+		<%= hidden_field_tag 'comment[kind]', @comment.kind %><br/>
+		<%= submit_tag 'Submit' %>
+		<%= button_to_function "Cancel" do |page| 
+			page.replace_html "comment_#{@comment.id}", :partial => 'comment', :object => @comment
+		 end %>
+		<%= button_to_function 'Insert Current Timecode', "InsertTime(document.#{@comment.sessionrecording.clipfilename.split('.')[0].gsub("-", "")}, form_#{@comment.id})", :class => "timecode_button" %>
+	<% end %>
+</div>

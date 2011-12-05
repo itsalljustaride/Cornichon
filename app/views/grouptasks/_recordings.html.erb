@@ -1,0 +1,35 @@
+<div id="recordings">
+	<% sid = "" %>
+	<% if !@task.sessionrecordings || @task.sessionrecordings.length == 0 %>
+	  There are no recordings for this task yet.
+	<% else %>
+  	<% @tasksessions.each do |session| %>
+  		<% if session.sessionrecordings.length != 0 %>
+  		<dl class="student" id="student_<%= session.associatedstudentsid %>">
+  			<% if session.associatedstudentsid != sid %>
+  				<dt>
+  					<%= "#{session.student.lastname.capitalize}, #{session.student.firstname}"  %>
+  				</dt>
+  				<% sid = session.associatedstudentsid %>
+  				<% session.sessionrecordings.each do |recording| %>
+  					<dd class="recording">
+  						<span class="recording_name">
+  						  <%= link_to_remote recording.cliptitle, :url => { :action => "load_comments_pane", :id => @task, :rec => recording.id} %>
+  						</span>
+  					</dd>
+  				<% end %>
+  			<% else %>
+  				<% session.sessionrecordings.each do |recording| %>
+  					<dd class="recording">
+  						<span class="recording_name">
+  						  <%= link_to_remote recording.cliptitle, :url => { :action => "load_comments_pane", :id => @task, :rec => recording.id} %>
+  						</span>
+  					</dd>
+  				<% end %>
+  				<% sid = session.associatedstudentsid %>
+  			<% end %>
+  		</dl>
+  		<% end %>
+  	<% end %>
+  <% end %>
+</div>

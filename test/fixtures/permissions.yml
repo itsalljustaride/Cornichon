@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  isselfviewable: false
+  isselfdiscussionable: false
+  isselfdownloadable: false
+  isgroupviewable: false
+  isgroupdiscussionable: false
+  isgroupdownloadable: false
+
+two:
+  isselfviewable: false
+  isselfdiscussionable: false
+  isselfdownloadable: false
+  isgroupviewable: false
+  isgroupdiscussionable: false
+  isgroupdownloadable: false

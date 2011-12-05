@@ -1,0 +1,9 @@
+<div id="taskstudents">
+	<% @task.students.each do |student| %>
+		<%= link_to_remote "#{student.lastname.capitalize}, #{student.firstname}", 
+							:url => { :action => "load_comments_pane", 
+							:id => @task, 
+							:student => student.id} %>
+		<br/>
+	<% end %>
+</div>

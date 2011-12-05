@@ -1,0 +1,7 @@
+if @task.instructor == current_user || current_user.is_super_admin?
+  page.redirect_to('#header')
+  page.replace_html("comments", :partial => 'usercomments', :object => @rec )
+else
+  page.redirect_to('#header')
+  page.replace_html("comments", :partial => 'usercomments', :object => @rec )
+end

@@ -1,0 +1,2 @@
+page.insert_html :bottom, 'comment_list', :partial => 'comment', :object => @comment
+page << 'document.getElementById("new_comment").value = ""'

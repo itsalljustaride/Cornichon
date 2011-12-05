@@ -1,0 +1,33 @@
+<p>
+  <b>Isselfviewable:</b>
+  <%=h @permission.isselfviewable %>
+</p>
+
+<p>
+  <b>Isselfdiscussionable:</b>
+  <%=h @permission.isselfdiscussionable %>
+</p>
+
+<p>
+  <b>Isselfdownloadable:</b>
+  <%=h @permission.isselfdownloadable %>
+</p>
+
+<p>
+  <b>Isgroupviewable:</b>
+  <%=h @permission.isgroupviewable %>
+</p>
+
+<p>
+  <b>Isgroupdiscussionable:</b>
+  <%=h @permission.isgroupdiscussionable %>
+</p>
+
+<p>
+  <b>Isgroupdownloadable:</b>
+  <%=h @permission.isgroupdownloadable %>
+</p>
+
+
+<%= link_to 'Edit', edit_permission_path(@permission) %> |
+<%= link_to 'Back', permissions_path %>

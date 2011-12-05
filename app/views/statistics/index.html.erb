@@ -1,0 +1,26 @@
+<div id="content">
+  <h1>DiLL Usage Statistics</h1>
+  <div class="content_container">
+    <div id="useage_statistics">
+      <p>
+      	<h3>Number of Instructors Using DiLL in the Past <%= @days_ago %> Days:</h3> <%= @num_of_total_profs %>
+      </p>
+      <p>
+      	<h3>Number of "Regular" Users (10 or more tasks per year):</h3> <%= users_with_frequency(10) %>
+      </p>
+      <p>
+      	<h3>Number of "Power" Users (20 or more tasks per year):</h3> <%= users_with_frequency(20) %>
+      </p>
+      <p>
+      	<h3>Synchronous VS Asynchronous Tasks:</h3> <%= sync_vs_async %>
+      </p>
+      <p>
+      	<h3>Lesson-Based VS Non-Lesson Tasks:</h3> <%= lesson_vs_non %>
+      </p>
+      <p>
+        <h3>Task Totals by Instructor</h3>
+      	<%= user_tasks_totals %>
+      </p>
+    </div>
+  </div>
+</div>

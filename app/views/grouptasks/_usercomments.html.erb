@@ -1,0 +1,19 @@
+<%= render :partial => 'audioplayer', :object => @rec %>
+<% if @rec.show_comments?(current_user) %>
+  <% if @parent_comments.count > 0 %>
+  	<h4>Comments for "<%= @rec.cliptitle %>":</h4>
+  	<div id="comment_list">
+  	<% @parent_comments.each do |comment| %>
+  		<%= render :partial => 'comment', :object => comment %>
+  	<% end %>
+  	</div>
+  	<%= render :partial => 'comment_form', :locals => {:rec => @rec, :task => @task} %>
+  <% else %>
+  	<h4>No comments for "<%= @rec.cliptitle %>"</h4>
+  	<div id="comment_list">
+  	</div>
+  	<%= render :partial => 'comment_form', :locals => {:rec => @rec, :task => @task} %>
+  <% end %>
+<% else %>
+  <h4>Currently viewing "<%= @rec.cliptitle %>"</h4>
+<% end %>

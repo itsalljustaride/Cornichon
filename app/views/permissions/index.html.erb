@@ -1,0 +1,30 @@
+<h1>Listing permissions</h1>
+
+<table>
+  <tr>
+    <th>Isselfviewable</th>
+    <th>Isselfdiscussionable</th>
+    <th>Isselfdownloadable</th>
+    <th>Isgroupviewable</th>
+    <th>Isgroupdiscussionable</th>
+    <th>Isgroupdownloadable</th>
+  </tr>
+
+<% @permissions.each do |permission| %>
+  <tr>
+    <td><%=h permission.isselfviewable %></td>
+    <td><%=h permission.isselfdiscussionable %></td>
+    <td><%=h permission.isselfdownloadable %></td>
+    <td><%=h permission.isgroupviewable %></td>
+    <td><%=h permission.isgroupdiscussionable %></td>
+    <td><%=h permission.isgroupdownloadable %></td>
+    <td><%= link_to 'Show', permission %></td>
+    <td><%= link_to 'Edit', edit_permission_path(permission) %></td>
+    <td><%= link_to 'Destroy', permission, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New permission', new_permission_path %>

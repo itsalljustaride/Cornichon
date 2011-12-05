@@ -1,0 +1,494 @@
+body {
+  color: green;
+  font-family: helvetica;
+	background: whitesmoke;
+	margin: 0px;
+	display: block;
+	min-width: 1000px;
+}
+
+a, a:visited {
+	color: green;
+}
+
+/* Login Page */
+
+
+#loginwrapper {
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+
+#login_copyright {
+	display: block;
+	clear: both;
+	font-size: .75em;
+	padding: 25px;
+}
+
+#title {
+	text-align: center;
+	top: 10px;
+	position: relative;
+	font-size: xx-large;
+}
+
+#login {
+  width: 20em;
+	position: relative;
+	margin-bottom: auto;
+	top: 25px;
+	float: left;
+	overflow: hidden;
+}
+
+
+#notice {
+	text-align: right;
+	display: block;
+	position: relative;
+	color: red;
+	visibility: visible;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+.message {
+	text-align: right;
+}
+
+#form {
+	margin: auto;
+	text-align: right;
+}
+
+#logo {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	left: 5%;
+}
+
+/* Main Pages */
+
+/* Header */
+
+
+#header {
+	background-color: grey;
+	display: block;
+	height: 50px;
+	position: relative;
+}
+
+#header_links ul {
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	list-style-type: none;
+	float: left;
+}
+
+#header_links ul li {
+	position: relative;
+	color: white;
+	font-weight: normal;
+	font-style: normal;
+	display: inline;
+	margin-right: 10px;
+}
+
+#header_links ul li a, #header_links ul li a:visited {
+	color:  white;
+	text-transform: none;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 2px;
+	font-size: 1.2em;
+	background-color: silver;
+	border-radius: 5px;
+	padding: 5px;
+	height: 100%;
+	width: 100%;
+}
+
+#copyright {
+	display: block;
+	float: right;
+	color: white;
+	text-align: right;
+	margin: 5px 10px 5px 5px;
+	font-size: .75em;
+}
+
+/* Content */
+
+
+#content {
+	margin: 25px 5%;
+	text-align: center;
+}
+
+#content h1 {
+	text-align: center;
+	font-weight: bold;
+	font-size: xx-large;
+	background-color: white;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	border-radius: 5px;
+	width: 75%;
+	max-width: 800px;
+	border: 1px outset silver;
+	padding-top: 3px;
+	padding-bottom: 5px;
+}
+
+/* Tasks View */
+
+.content_container {
+	border-radius: 5px;
+	background-color: white;
+	margin: 10px auto;
+	padding-top: 2px;
+	padding-bottom: 10px;
+	display: block;
+	width: 75%;
+	max-width: 800px;
+	border: 1px outset silver;
+	text-align: left;
+	position: relative;
+}
+
+.content_container h2 {
+	margin: 10px;
+}
+
+.tasks_list {
+	left: 40px;
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	width: 90%;
+}
+
+.task_link {
+	width: 100%;
+	display: inline-block;
+	margin: 5px;
+}
+
+.task_link a, .task_link a:visited {
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+	color: green;
+	text-align: left;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	padding: 3px 3px 3px 7px;
+	border-radius: 5px;
+}
+
+.task_link:hover a, .task_link:hover a:visited {
+	background-color: gray;
+	color: white;
+}
+
+input {
+	margin: 5px;
+}
+
+.object_form {
+	border-radius: 5px;
+	background-color: white;
+	margin: 10px auto;
+	display: block;
+	width: 75%;
+	max-width: 800px;
+	border: 1px outset silver;
+	text-align: left;
+	position: relative;
+	padding: 10px;
+}
+
+/* Single Task View */
+
+#task_notice {
+	text-align: center;
+	display: block;
+	position: relative;
+	color: red;
+	visibility: visible;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+#edit_perms {
+	width: 100%;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+dl {
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+dt {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+dd {
+	margin-left: 20px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	display: block;
+}
+
+dd .recording_name a {
+	width: 100%;
+	display: block;
+	border-radius: 5px;
+	padding: 3px 3px 3px 7px;
+}
+
+dd .recording_name a:hover {
+	background-color: gray;
+	color: white;
+}
+
+#recordings {
+	width: 33%;
+	background-color: white;
+	border-radius: 5px;
+	border: 1px outset silver;
+	float: left;
+	margin-top: 25px;
+	padding: 25px;
+	margin-right: 2%;
+	position: relative;
+	text-align: left;
+}
+
+#taskstudents {
+	width: 33%;
+	background-color: white;
+	border-radius: 5px;
+	border: 1px outset silver;
+	float: left;
+	margin-top: 25px;
+	padding: 25px;
+	margin-right: 2%;
+	position: relative;
+	text-align: left;
+}
+
+#taskstudents a, #taskstudents a:visited {
+	padding: 5px;
+	text-decoration: none;
+	width: 100%;
+	position: relative;
+	display: inline-block;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+#taskstudents a:hover {
+	background-color: gray;
+	border-radius: 5px;
+	color: white;
+}
+
+/* Task Comments */
+
+
+#comments {
+	width: 53%;
+	padding: 25px;
+	background-color: white;
+	border-radius: 5px;
+	border: 1px outset silver;
+	float: right;
+	margin-top: 25px;
+	text-align: left;
+}
+
+#comments h3 {
+	margin: 0;
+}
+
+#comments .recording_comments {
+	margin: 10px;
+}
+
+.comment_children {
+	padding-left: 5%;
+	min-width: 300px;
+}
+
+#comment_list {
+	margin-bottom: 25px;
+	text-align: left;
+}
+
+#comments .comment_odd, #comments .comment_even {
+	border-radius: 5px;
+	padding: 2px 5px;
+	margin-bottom: 10px;
+	border-style: solid;
+	border-color: whitesmoke;
+}
+
+#comments .comment_odd {
+	background-color: whitesmoke;
+}
+
+.comment_datetime {
+	font-weight: normal;
+	font-style: normal;
+	font-size: .75em;
+	color: gray;
+}
+
+.comment_text_0 {
+	position: relative;
+	left: 1em;
+}
+
+.comment_text_1 {
+	position: relative;
+	left: 1em;
+	font-style: italic;
+}
+
+.comment_actions a, .comment_actions a:visited {
+	font-weight: normal;
+	font-style: normal;
+	font-size: .75em;
+	color: gray;
+}
+
+.comment_reply_form {
+	margin-left: 5%;
+	margin-bottom: 5px;
+}
+
+.comment_form form textarea, .comment_reply_form form textarea {
+	width: 98%;
+	border-radius: 5px;
+	padding: 5px;
+	border: 1px outset gray;
+}
+
+.timecode_button {
+	float: right;
+	position: relative;
+	right: 1.2em;
+}
+
+/* Audio Player */
+
+
+.audioclip {
+	border-radius: 5px;
+	background-color: whitesmoke;
+	padding: 10px;
+	border: 1px outset gray;
+}
+
+.audioclipinfo {
+}
+
+#player_wrapper {
+	min-height: 20px;
+}
+
+.downloadfile {
+	font-size: .75em;
+	color: gray;
+	margin-top: 10px;
+	display: inline-block;
+	min-height: 20px;
+}
+
+.downloadfile a {
+	color: gray;
+}
+
+.player_timecode {
+	font-size: .85em;
+	border-radius: 5px;
+	color: white;
+	background-color: gray;
+	font-weight: bold;
+	padding: 2px 4px;
+	position: relative;
+	float: right;
+	top: 8px;
+	display: inline;
+}
+
+/* Comments */
+
+.standalone_comment_form {
+	margin: 25px;
+}
+
+.standalone_comment_form form textarea {
+	width: 98%;
+	border-radius: 5px;
+	padding: 5px;
+	border: 1px outset gray;
+}
+
+/* Permissions */
+
+#perm_instructions {
+	font-size: small;
+	margin-bottom: 25px;
+	color: red;
+}
+
+.permissions_form {
+	margin: 25px;
+}
+
+.permissions_form h3 {
+	display: inline;
+}
+
+.permissions_form table{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.permissions_form table tr td {
+	padding: 10px;
+}
+
+.permissions_form .field_title {
+	text-align: right;
+}
+
+/* Statistics */
+
+#useage_statistics {
+	margin: 10px;
+}
+
+/* Footer */
+
+
+#footer {
+	clear: both;
+	min-height: 25px;
+}

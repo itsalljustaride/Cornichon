@@ -1,0 +1,35 @@
+dill_db:
+    adapter: postgresql
+    encoding: unicode
+    database: dilldb
+    pool: 5
+    username:
+    password:
+    host: 
+
+development:
+    adapter: postgresql
+    encoding: unicode
+    database: cornichon_dev
+    pool: 5
+    username:
+    password:
+    host: 
+                      
+test:
+    adapter: postgresql
+    encoding: unicode
+    database: cornichon_test
+    pool: 5
+    username:
+    password:
+    host: 
+    
+production:
+    adapter: postgresql
+    encoding: unicode
+    database: cornichon
+    pool: 5
+    username:
+    password:
+    host: 

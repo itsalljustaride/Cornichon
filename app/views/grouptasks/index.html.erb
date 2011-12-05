@@ -1,0 +1,8 @@
+<div id="content">
+	<h1><%= current_user.firstname %> <%= current_user.lastname %></h1>
+	<% if @current_user_proftasks.length != 0 %>
+  	<%= render :partial => 'prof_tasks' %>
+  <% end %>
+  <%= render :partial => 'student_tasks' %>
+  <%= render :partial => 'tasks_notice' %>
+</div>

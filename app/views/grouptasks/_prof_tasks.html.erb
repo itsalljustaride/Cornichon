@@ -1,0 +1,10 @@
+<div class="content_container">
+	<h2>Your Instructor Tasks</h2>
+	<div id="instructor_tasks" class="tasks_list">
+		<% for task in @current_user_proftasks %>
+		  <span class="task_link">
+				<%= link_to task.taskname, :controller => "grouptasks", :action => "show", :id => "#{task.id}" %>
+			</span>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:comment_timestamp] = "%B %d, %Y at %I:%M %p"

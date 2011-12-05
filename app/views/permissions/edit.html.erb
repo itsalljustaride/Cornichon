@@ -1,0 +1,33 @@
+<div id="content">
+  <h1>Edit Permissions</h1>
+  <div class="content_container">
+    <div class="permissions_form">
+      <% form_for(@permission) do |f| %>
+        <%= f.error_messages %>
+        
+        <%= render :partial => 'instructions' %>
+
+        <table>
+          <tr>
+            <td class="field_title"><h3>View Privileges</h3></td>
+            <td><%= f.select :viewable, Permission::ENTRY_VALUES %></td>
+          </tr>
+          <tr>
+            <td class="field_title"><h3>Discussion/Commenting Privileges</h3></td>
+            <td><%= f.select :discussionable, Permission::ENTRY_VALUES %></td>
+          </tr>
+          <tr>
+            <td class="field_title"><h3>Downloading Privileges</h3></td>
+            <td><%= f.select :downloadable, Permission::ENTRY_VALUES %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><%= f.submit 'Save' %></td>
+          </tr>
+        </table>
+      <% end %>
+
+      <%= link_to 'Back', url_for(:controller => 'grouptasks', :action => 'show', :id => @permission.grouptask) %>
+    </div>
+  </div>
+</div>

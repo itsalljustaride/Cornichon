@@ -1,0 +1,63 @@
+<div class="audioclip">
+  <div id="player_wrapper">
+  	<span id="qtplayer">
+  	</span>
+  </div>
+	<script language="JavaScript" type="text/javascript"> 
+			QT_ReplaceElementContents_XHTML( document.getElementById("qtplayer"),
+											 '<%= "#{@rec.url_to_file}" %>', '100%', '16', '',
+					 						 'autoplay', 'false',
+											 'showlogo', 'false',
+					 						 'kioskmode', 'true',
+											 'align', 'middle',
+											 'EnableJavaScript', 'True',
+											 'postdomevents', 'true',
+											 'emb#NAME' , '<%= @rec.identifier %>' , 
+											 'obj#id' , 'theplayer', 
+											 'emb#id', '<%= @rec.identifier %>'
+											);
+										
+			Event.observe(
+					window,
+					'qt_play',
+					function() {
+						var timePlay = setInterval(function() { 
+														var timedisplay = document.getElementById('player_timecode');
+														var player = document.getElementById('<%= @rec.identifier %>');
+							
+														var currentTime=player.GetTime()/player.GetTimeScale();
+														var minutes=Math.floor(currentTime/60);
+														var seconds=parseInt(currentTime % 60);
+														var timecode=pad(minutes.toString(), 2) + ':' + pad(seconds.toString(), 2);
+							
+														timedisplay.update(timecode);
+													}
+													, 500);
+					}
+				);
+			
+			Event.observe(window,'qt_pause',function() {var timePlay=window.clearInterval(timePlay);});
+			Event.observe(window,'qt_ended',function() {var timePlay=window.clearInterval(timePlay);});
+		
+			Event.observe( 	window, 
+							'qt_timechanged', 
+							function() { 
+									var timedisplay = document.getElementById('player_timecode');
+									var player = document.getElementById('<%= @rec.identifier %>');
+								
+									var currentTime=player.GetTime()/player.GetTimeScale();
+									var minutes=Math.floor(currentTime/60);
+									var seconds=parseInt(currentTime % 60);
+									var timecode=pad(minutes.toString(), 2) + ':' + pad(seconds.toString(), 2);
+								
+									timedisplay.update(timecode);
+								}
+							);
+	</script>
+	<span class="downloadfile">
+  	<% if @rec.downloadable?(current_user) %>
+  	  <%= link_to "Download", "#{@rec.url_to_file}" %> (Right-click and choose "Save As...")
+  	<% end %>
+	</span>
+	<span id="player_timecode" class="player_timecode">00:00</span>
+</div>

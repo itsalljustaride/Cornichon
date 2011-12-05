@@ -1,0 +1,38 @@
+<div id="comment_<%= comment.id %>" class="<%= cycle("comment_even", "comment_odd", :name => 'comment_cycle') %>">
+	<%= "#{comment.student.firstname} #{comment.student.lastname}" %> says:<br/>
+	<span class="comment_datetime">
+	  <%# date formatting in /initializers/time_formats.rb %>
+	  <%= comment.created_at.to_s(:comment_timestamp) %>
+	</span>
+	<span class="comment_text_<%= comment.kind %>">
+	  <%= simple_format( comment.body.gsub(/\d{1,3}:\d{1,2}/){|s| link_to_function(s, "document.#{comment.sessionrecording.identifier}.SetTime(document.#{comment.sessionrecording.identifier}.GetTimeScale()*(#{(s.split(':')[0].to_i*60)+s.split(':')[1].to_i}));document.#{comment.sessionrecording.identifier}.Play()")} ) %>
+	</span>
+	<% if comment.audio? %>
+	  <div id="comment_<%= comment.id %>_audio" class="comment_audio">
+	    <%= link_to 'Click to play audio', comment.audio.url %>
+	  </div>
+	  <script language="JavaScript" type="text/javascript"> 
+  			QT_ReplaceElementContents_XHTML( document.getElementById("comment_<%= comment.id %>_audio"),
+  											 '<%= "#{comment.audio.url}" %>', '100', '16', '',
+  					 						 'autoplay', 'false',
+  											 'showlogo', 'false',
+  					 						 'kioskmode', 'true',
+  											 'align', 'middle',
+  											 'EnableJavaScript', 'False',
+  											 'postdomevents', 'false',
+  											 'emb#NAME' , '' , 
+  											 'obj#id' , '', 
+  											 'emb#id', ''
+  											);
+  	</script>
+	<% end %>
+	<p class="comment_actions">
+	  <%= reply_to_comment(comment) %> | <%= audio_reply(comment) %>
+  	<% if comment.student == current_user %>
+  		 | <%= comment_delete_if_auth(comment) %> | <%= comment_edit_if_auth(comment) %>
+  	<% end %>
+	</p>
+	<div id="comment_<%= comment.id %>_children" class="comment_children">
+	  <%= render :partial => 'comment', :collection => comment.children %>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<div id="header">
+	<div id="header_links">
+	  <ul>
+	    <li><%= link_to 'Home', url_for(:action => 'index', :controller => 'grouptasks') %></li>
+	    <li><%= link_to "Logout #{current_user.shortname.capitalize}", url_for(:action => 'logout', :controller => 'logins') %></li>
+	    <li><%= link_to 'Open Main DiLL Site', DILL_WEB_FULL_URL, :target => :blank %></li>
+	    <% if current_user.is_super_admin? %>
+	      <li><%= link_to 'Statistics', url_for(:controller => 'statistics', :days => 365) %></li>
+	    <% end %>
+	  </ul>
+  </div>
+  <div id="copyright">
+    <%= render :partial => 'layouts/copyright' %>
+  </div>
+</div>

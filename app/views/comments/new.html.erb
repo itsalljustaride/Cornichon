@@ -1,0 +1,27 @@
+<div id="content">
+  <h1>New Comment on "<%= @rec.cliptitle %>"</h1>
+  <div class="content_container">
+    <div class="standalone_comment_form">
+      <%= render :partial => 'audioplayer', :object => @rec %>
+
+      <% form_for @comment, :html => { :multipart => true } do |f| %>
+        <%= f.error_messages %>
+        <p>
+      		<%= f.text_area :body, :rows => 10, :id => 'new_comment' %>
+      		<% if @parent %>
+      		  <%= hidden_field_tag 'comment[parent_id]', @parent.id %>
+      		<% end %>
+      		<%= hidden_field_tag 'comment[student_id]', current_user.id %>
+      		<%= hidden_field_tag 'comment[sessionrecording_id]', @rec.id %>
+      		<%= hidden_field_tag 'comment[kind]', comment_kind(@rec.task) %><br/>
+      		<%= f.file_field :audio %>
+      		<%= button_to_function 'Insert Current Timecode', "InsertTime(#{@rec.identifier},new_comment)", :class => "timecode_button" %>
+        <p>
+          <%= f.submit "Save" %>
+        </p>
+      <% end %>
+
+      <%= link_to 'Back', :controller => 'grouptasks', :action => 'show', :id => @rec.task, :show_comments_for => @rec.id %>
+    </div>
+  </div>
+</div>

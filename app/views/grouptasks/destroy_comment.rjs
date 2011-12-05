@@ -1,0 +1,4 @@
+page.visual_effect :fade, "comment_#{@comment.id}", :duration => 1
+page.delay(5) do
+  page.remove "comment_#{@comment.id}"
+end
