@@ -12,7 +12,7 @@ class LoginsController < ApplicationController
       
       if RAILS_ENV == 'development'
         # Turn this on to skip authentication for dev purposes
-        authenticated = true
+        #authenticated = true
       end
       
       if !authenticated
