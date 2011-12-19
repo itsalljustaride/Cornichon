@@ -33,9 +33,9 @@ Rails::Initializer.run do |config|
   config.gem "paperclip", :version => "~> 2.4"
   config.gem "ruby-mp3info", :lib => "mp3info"
   
-  Encoding.default_external = Encoding::UTF_8
+  #Encoding.default_external = Encoding::UTF_8
 
-  Encoding.default_internal = Encoding::UTF_8
+  #Encoding.default_internal = Encoding::UTF_8
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -63,10 +63,6 @@ Rails::Initializer.run do |config|
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
-  config.action_controller.session = {
-    :key => '_cornichon_session',
-    :secret      => 'e7f4f1344024b8f9e30208b1edef7f237a5bf40ac10cacf00ee3095ca94f886296e8d26c4bbbe56479a57d1cd9afe5b1820a2d6f87a40925898e899ad0192ab4'
-  }
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information

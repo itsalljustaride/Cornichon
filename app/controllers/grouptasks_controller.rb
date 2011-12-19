@@ -106,11 +106,3 @@ class GrouptasksController < ApplicationController
   end
     
 end
-
-def protect
-  unless session[:user_id]
-    flash[:notice] = "Please log in first!!!"
-    redirect_away url_for(:controller => 'logins')
-    return false
-  end
-end

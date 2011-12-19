@@ -20,11 +20,3 @@ class StatisticsController < ApplicationController
     @nonlesson_tasks = @the_tasks.nonlesson_tasks.count
   end
 end
-
-def protect
-  unless session[:user_id] && current_user.is_super_admin?
-    flash[:notice] = "Please log in first!!!"
-    redirect_away url_for(:controller => 'logins')
-    return false
-  end
-end

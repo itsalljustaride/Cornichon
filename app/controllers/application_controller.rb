@@ -18,6 +18,15 @@ class ApplicationController < ActionController::Base
   
   private
   
+    def protect
+      unless session[:user_id]
+        logger.info "I'm kicking you OWT!!!"
+        flash[:notice] = "Please log in first!!!"
+        redirect_away url_for(:controller => 'logins')
+        return false
+      end
+    end
+  
     def setup_session_key
       # Pick a unique cookie name to distinguish our session data from others'
       request.session_options[:session_key] = '_cornichon_session_id'

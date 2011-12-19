@@ -34,15 +34,17 @@ class Directoryauthority < ActiveRecord::Base
       if self.ldapshouldbind != 0
         dn = ""
         conn.auth self.ldapsearchdn, self.ldapsearchpassword
-        conn.bind do
+        if conn.bind
           logger.info "Searching #{self.referencetitle} for user #{username}"
           conn.search( :base => self.ldapsearchbase, :attributes => attrs, :scope => Net::LDAP::SearchScope_WholeSubtree, :filter => filter, :return_result => true ) do |entry|
             dn = entry.dn
             logger.info "Search found dn \"#{dn}\""
           end
+        else
+          logger.info "Couldn't bind."
         end
-        logger.info "Attempting bind with dn \"#{dn}\" and passwd \"#{password}\""
-        if conn.authenticate dn, password
+        logger.info "Attempting bind with dn \"#{dn}\""
+        if !dn.empty? && conn.authenticate(dn, password)
           logger.info "Success! Bound and determined!"
           return true
         else

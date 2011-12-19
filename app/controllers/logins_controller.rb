@@ -29,7 +29,9 @@ class LoginsController < ApplicationController
       
       if authenticated && Student.find(:first, :conditions => [ "lower(shortname) = ?", params[:username].downcase ])
         user = Student.find(:first, :conditions => [ "lower(shortname) = ?", params[:username].downcase ])
+        logger.info "Setting current user to #{user.shortname}"
         session[:user_id] = user.shortname
+        logger.info "Session user is #{session[:user_id]}"
         if session[:original_uri]
           redirect_back
         else

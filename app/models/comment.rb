@@ -1,6 +1,6 @@
-class Comment < ActiveRecord::Base
+class Comment < ActiveRecord::Base  
   acts_as_tree :order => 'created_at'
-  has_attached_file :audio, :url => "/system/audio/:id/:basename.:extension",
+  has_attached_file :audio, :url => "#{ActionController::Base.relative_url_root}/system/audio/:id/:basename.:extension",
                             :path => ":rails_root/public/system/audio/:id/:basename.:extension"
   validates_attachment_content_type :audio, :content_type => ['audio/mpeg', 
                                                               'audio/x-mpeg', 
