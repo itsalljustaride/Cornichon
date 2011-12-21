@@ -10,6 +10,7 @@ dill_db:
 development:
     adapter: postgresql
     encoding: unicode
+    template: template0
     database: cornichon_dev
     pool: 5
     username:
@@ -19,6 +20,7 @@ development:
 test:
     adapter: postgresql
     encoding: unicode
+    template: template0
     database: cornichon_test
     pool: 5
     username:
@@ -28,6 +30,7 @@ test:
 production:
     adapter: postgresql
     encoding: unicode
+    template: template0
     database: cornichon
     pool: 5
     username:

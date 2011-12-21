@@ -33,9 +33,9 @@ Rails::Initializer.run do |config|
   config.gem "paperclip", :version => "~> 2.4"
   config.gem "ruby-mp3info", :lib => "mp3info"
   
-  #Encoding.default_external = Encoding::UTF_8
+  Encoding.default_external = Encoding::UTF_8
 
-  #Encoding.default_internal = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
