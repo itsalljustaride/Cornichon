@@ -16,6 +16,7 @@ Make sure Postgres is in PATH ($which postgres - should output location)
 
 Install required gems: sudo rake gems:install
 If pg gem fails, make sure ARCHFLAGS is set depending on 32 or 64 bit
+Both PostgreSQL and Ruby must be running the same architecture (32 or 64-bit). A mismatch will cause the Ruby pg gem to fail to install.
 
 Set up passenger as gem describes (sudo gem install passenger).
 Edit httpd.conf and virtual host passenger prefs to point to webserver/documents
